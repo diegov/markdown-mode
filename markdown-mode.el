@@ -7360,7 +7360,9 @@ Return the name of the output buffer used."
                     (point) (point)
                     (concat command " "
                             (shell-quote-argument buffer-file-name))
-                    output-buffer-name))))
+                    output-buffer-name
+                    nil
+                    "*markdown-command-log*"))))
               ;; Pass region to `markdown-command' via stdin
               (t
                (let ((buf (get-buffer-create output-buffer-name)))
